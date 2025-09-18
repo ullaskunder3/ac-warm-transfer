@@ -71,7 +71,9 @@ Create `.env`:
 LIVEKIT_URL=<your_livekit_url>
 LIVEKIT_API_KEY=<your_livekit_api_key>
 LIVEKIT_API_SECRET=<your_livekit_api_secret>
+
 OPENAI_API_KEY=<your_openai_api_key>
+
 GEMINI_API_KEY=<optional_for_llm>
 ```
 
@@ -91,6 +93,7 @@ Endpoints:
 
 ```
 NEXT_PUBLIC_LIVEKIT_URL=
+DEEPGRAM_API_KEY=
 ```
 
 ```bash
