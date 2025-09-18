@@ -20,7 +20,6 @@ export default function ControllerPage() {
   const socketRef = useRef<WebSocket | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const localStreamRef = useRef<MediaStream | null>(null);
-  const demoIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const startTranscription = async () => {
     try {
@@ -77,11 +76,40 @@ export default function ControllerPage() {
     }
   };
 
+  //TODO:NEED TO CHECK AI CODE
   const stopTranscription = () => {
-    mediaRecorderRef.current?.stop();
-    localStreamRef.current?.getTracks().forEach((track) => track.stop());
-    socketRef.current?.close();
-    setIsTranscribing(false);
+    if (mediaRecorderRef.current) {
+      mediaRecorderRef.current.onstop = () => {
+        // stop mic tracks after recorder has flushed
+        localStreamRef.current?.getTracks().forEach((track) => track.stop());
+
+        // close socket after media stops
+        if (socketRef.current?.readyState === WebSocket.OPEN) {
+          socketRef.current.close();
+        }
+
+        // clear refs
+        mediaRecorderRef.current = null;
+        localStreamRef.current = null;
+        socketRef.current = null;
+
+        setIsTranscribing(false);
+      };
+
+      if (mediaRecorderRef.current.state !== "inactive") {
+        mediaRecorderRef.current.stop();
+      }
+    } else {
+      // fallback cleanup
+      localStreamRef.current?.getTracks().forEach((track) => track.stop());
+      if (socketRef.current?.readyState === WebSocket.OPEN) {
+        socketRef.current.close();
+      }
+      mediaRecorderRef.current = null;
+      localStreamRef.current = null;
+      socketRef.current = null;
+      setIsTranscribing(false);
+    }
   };
 
   const initiateTransfer = () => {
