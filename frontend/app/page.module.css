@@ -1,0 +1,34 @@
+.container {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.panel {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+}
+
+.transcript {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 80px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.controls button {
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #0070f3;
+  color: white;
+  font-weight: bold;
+}
+
+.controls button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}

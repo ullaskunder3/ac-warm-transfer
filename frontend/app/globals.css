@@ -1,0 +1,158 @@
+.call-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: white;
+  color: black;
+  min-height: 100vh;
+}
+
+.step-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid black;
+}
+
+.step-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.step-subtitle {
+  font-size: 16px;
+  margin: 10px 0 0 0;
+  color: #666;
+}
+
+.button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+.button:hover {
+  background: #333;
+}
+
+.button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.button-secondary {
+  background: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.button-secondary:hover {
+  background: #f0f0f0;
+}
+
+.button-danger {
+  background: red;
+  color: white;
+}
+
+.button-danger:hover {
+  background: #cc0000;
+}
+
+.members-list {
+  background: #f5f5f5;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.members-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.member-item {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.member-item:last-child {
+  border-bottom: none;
+}
+
+.transcript-container {
+  background: #f5f5f5;
+  border: 2px solid black;
+  padding: 20px;
+  margin: 20px 0;
+  min-height: 120px;
+  border-radius: 4px;
+}
+
+.transcript-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.transcript-text {
+  line-height: 1.5;
+  color: #333;
+}
+
+.controls-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.error-message {
+  background: red;
+  color: white;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-connected {
+  background: green;
+}
+
+.status-disconnected {
+  background: red;
+}
+
+.status-transferring {
+  background: orange;
+}
+
+.summary-panel {
+  background: #f0f0f0;
+  border: 2px solid black;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.summary-title {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
