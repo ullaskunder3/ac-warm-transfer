@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project demonstrates a **warm call transfer** workflow using **LiveKit** for real-time audio/video communication with deepgram sst and an **LLM** (gimini) for generating call summaries.
+This project demonstrates a **warm call transfer** workflow using **LiveKit** for real-time audio communication with deepgram sst and an **LLM** (gimini) for generating call summaries.
 
 **Flow:**
 
@@ -35,9 +35,15 @@ In such cases, summary generation may fail.
 - Warm transfer between agents with independent LiveKit rooms.
 - Interactive **Next.js frontend** for connecting and managing calls.
 
+## 🎥 Demo
+
+You can watch the demo here:
+
+- [demo.mkv](./demo.mkv) (included in repo)
+
 ## Tech Stack
 
-- **Backend:** Python + FastAPI + LiveKit Server SDK
+- **Backend:** Python + FastAPI + LiveKit Server SDK + deepgram
 - **Frontend:** Next.js 13+ (App Router) + TypeScript + Zustand
 
 ## Setup Instructions
